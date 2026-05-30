@@ -1,1 +1,36 @@
-<h1>Home</h1>
+---
+import { getCollection } from "astro:content";
+import BlogCard from "./BlogCard.astro";
+
+interface Blog {
+    title: string;
+    summary: string;
+    tags: string[];
+}
+
+const blogs: Blog[] = await getCollection("blogs");
+blogs.reverse();
+---
+
+<h2>My Thoughts</h2>
+<div class="header-line"></div>
+
+<ul>
+    {blogs.map((blog) => <BlogCard blog={blog} />)}
+</ul>
+
+<style>
+    h2 {
+        font-size: 5rem;
+    }
+
+    .header-line {
+        border-top: solid 6px #2e2e2e;
+        margin-bottom: 2.5rem;
+        width: 48%;
+    }
+
+    ul {
+        list-style-type: None;
+    }
+</style>

@@ -7,8 +7,22 @@
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+
+    color: #2e2e2e;
 }
 
-h1 {
-    font-weight: 800;
+html,
+body {
+    background-color: #ececec;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.content {
+    position: relative;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+
+    width: 75%;
 }

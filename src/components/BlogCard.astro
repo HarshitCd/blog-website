@@ -1,0 +1,61 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Tag from "./Tag.astro";
+
+interface Props {
+    blog: CollectionEntry<"blogs">;
+}
+
+const { blog } = Astro.props;
+const tags = blog.data.tags;
+---
+
+<a href={`/blogs/${blog.id}`} class="blog-link">
+    <div class="blog-card">
+        <p class="blog-title">
+            {blog.data.title}
+        </p>
+        <p class="blog-summary">
+            {blog.data.summary}
+        </p>
+        <div class="blog-tags">
+            {tags.map((tag) => <Tag tag={tag} />)}
+        </div>
+    </div>
+</a>
+
+<style>
+    a {
+        text-decoration: none;
+    }
+
+    .blog-card {
+        border: solid 1px #bebebe;
+        border-radius: 6px;
+
+        margin-bottom: 1.75rem;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .blog-title {
+        font-size: 1.5rem;
+        font-weight: 500;
+
+        margin-bottom: 0.75rem;
+    }
+
+    .blog-summary {
+        color: #7e7e7e;
+        font-weight: 300;
+        font-style: italic;
+
+        margin-bottom: 0.5rem;
+    }
+
+    .blog-tags {
+        display: flex;
+        position: relative;
+
+        gap: 0.3rem;
+    }
+</style>
