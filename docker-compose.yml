@@ -1,0 +1,9 @@
+services:
+  blog-website:
+    container_name: blog-website
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      - 4321:80
