@@ -1,6 +1,7 @@
 services:
   blog-website:
     container_name: blog-website
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile

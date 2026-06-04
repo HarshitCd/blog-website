@@ -3,49 +3,123 @@
         <a href="/">Talking Shit</a>
     </div>
 
-    <div class="nav-options">
+    <button id="hamburger" class="hamburger" aria-label="Toggle menu">
+        <div class="hamburger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="hamburger-nav-options">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+        </div>
+    </button>
+
+    <!-- <div class="nav-options">
         <a href="/">Home</a>
         <a href="/about">About</a>
         <a href="/contact">Contact</a>
-    </div>
+    </div> -->
 </nav>
 
 <style>
+    a {
+        text-decoration: none;
+    }
+
     nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        border-bottom: solid 0.01rem #5f5f5f;
-        padding: 0.5rem 0rem;
-        margin-top: 1rem;
-        margin-bottom: 2.5rem;
 
         position: relative;
         top: 0%;
         left: 50%;
         transform: translate(-50%, -0%);
 
-        width: 90%;
-    }
+        width: 85%;
 
-    a {
-        text-decoration: none;
+        margin-top: 1rem;
+        margin-bottom: 2.5rem;
+
+        border-bottom: 1px solid #bebebe;
+        padding-bottom: 0.6rem;
+
+        z-index: 1000;
     }
 
     .main a {
-        font-size: 2.25rem;
+        font-size: 1.5rem;
         font-weight: 600;
     }
 
-    .nav-options {
-        font-size: 1.2rem;
+    .hamburger {
+        border: 0px;
+        background-color: #ececec;
 
-        display: flex;
-        gap: 2rem;
+        cursor: pointer;
+        padding: 0.5rem;
     }
 
-    .nav-options a:hover {
-        background-color: #dcdcdc;
+    .hamburger-icon {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .hamburger-icon span {
+        background-color: #000000;
+        width: 15px;
+        height: 3px;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger-nav-options {
+        display: none;
+        padding: 8px 0px;
+
+        flex-direction: column;
+
+        position: absolute;
+        right: 0;
+
+        width: 35%;
+        max-width: 150px;
+        margin-top: 0.5rem;
+
+        border: 1px solid #bebebe;
+        border-radius: 2px;
+
+        background-color: #ececec;
+    }
+
+    .hamburger-nav-options a {
+        padding: 0.35rem 0rem;
+    }
+
+    .hamburger.active .hamburger-nav-options {
+        display: flex;
+    }
+
+    .nav-options {
+        display: none;
+    }
+
+    @media (min-width: 640px) {
+        .main a {
+            font-size: 2rem;
+        }
     }
 </style>
+
+<script>
+    const hamburger = document.getElementById("hamburger");
+
+    // Toggle menu on button click
+    hamburger?.addEventListener("click", (e) => {
+        e.stopPropagation();
+        hamburger.classList.toggle("active");
+    });
+</script>

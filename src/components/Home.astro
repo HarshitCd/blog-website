@@ -8,7 +8,7 @@ interface Blog {
     tags: string[];
 }
 
-const blogs: Blog[] = await getCollection("blogs");
+const blogs = await getCollection("blogs");
 blogs.reverse();
 ---
 
@@ -21,16 +21,30 @@ blogs.reverse();
 
 <style>
     h2 {
-        font-size: 5rem;
+        font-size: 2rem;
+        font-weight: 500;
     }
 
     .header-line {
-        border-top: solid 6px #2e2e2e;
-        margin-bottom: 2.5rem;
-        width: 48%;
+        border-bottom: solid 3px #2e2e2e;
+        margin-top: 0.3rem;
+        margin-bottom: 2rem;
+        width: 90%;
     }
 
     ul {
         list-style-type: None;
+    }
+
+    @media (min-width: 640px) {
+        h2 {
+            font-size: 4rem;
+        }
+
+        .header-line {
+            border-bottom: solid 6px #2e2e2e;
+            margin-bottom: 2.5rem;
+            width: 40%;
+        }
     }
 </style>

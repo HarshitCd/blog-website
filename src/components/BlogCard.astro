@@ -38,7 +38,7 @@ const tags = blog.data.tags;
     }
 
     .blog-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         font-weight: 500;
 
         margin-bottom: 0.6rem;
@@ -46,8 +46,10 @@ const tags = blog.data.tags;
 
     .blog-summary {
         color: #7e7e7e;
+
         font-weight: 300;
         font-style: italic;
+        font-size: 0.85rem;
 
         margin-bottom: 0.75rem;
     }
@@ -57,5 +59,15 @@ const tags = blog.data.tags;
         position: relative;
 
         gap: 0.3rem;
+    }
+
+    @media (min-width: 640px) {
+        .blog-title {
+            font-size: 1.5rem;
+        }
+
+        .blog-summary {
+            font-size: 0.9rem;
+        }
     }
 </style>
