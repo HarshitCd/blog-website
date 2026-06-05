@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import DP from "../assets/dp.jpeg";
+import LI from "../assets/linkedin_icon.svg";
+import GM from "../assets/gmail_icon.svg";
+import GH from "../assets/github_icon.svg";
 ---
 
 <h2>About</h2>
@@ -27,8 +30,35 @@ import DP from "../assets/dp.jpeg";
             </p>
         </section>
         <section class="more-info">
-            <a href="/contact">
+            <!-- <a href="/about">
                 <button class="contact-me">Reach Out</button>
+            </a> -->
+            <a
+                href="https://linkedin.com/in/harshit-chelladurai"
+                target="_blank"
+                class="linkedin"
+            >
+                <button>
+                    <Image src={LI} alt="LinkedIn" width={24} height={24} />
+                </button>
+            </a>
+            <a
+                href="https://github.com/HarshitCd"
+                target="_blank"
+                class="github"
+            >
+                <button>
+                    <Image src={GH} alt="Github" width={24} height={24} />
+                </button>
+            </a>
+            <a
+                href="mailto:harshitchelladurai@gmail.com"
+                target="_blank"
+                class="email"
+            >
+                <button>
+                    <Image src={GM} alt="Gmail" width={24} height={24} />
+                </button>
             </a>
             <a
                 href="/Harshit_Chelladurai_Resume.pdf"
@@ -50,9 +80,9 @@ import DP from "../assets/dp.jpeg";
     }
 
     .header-line {
-        border-top: solid 3px #2e2e2e;
+        border-top: solid 1px #bebebe;
         margin-bottom: 2.5rem;
-        width: 90%;
+        width: 100%;
     }
 
     .about {
@@ -72,10 +102,10 @@ import DP from "../assets/dp.jpeg";
 
     .about-pic {
         border: solid 1px #bebebe;
-        border-radius: 20%;
+        border-radius: 20px;
 
-        width: 25rem;
         max-width: 85vw;
+        width: 25rem;
         height: auto;
 
         transform: scaleX(-1);
@@ -85,20 +115,26 @@ import DP from "../assets/dp.jpeg";
     .more-info {
         margin-top: 2.5rem;
         display: flex;
+        align-items: center;
+        justify-content: center;
 
-        gap: 1rem;
+        gap: 1.25rem;
     }
 
     a {
         text-decoration: none;
     }
 
-    button {
+    .more-info button {
+        display: flex;
+        align-items: center;
+
         background-color: #ececec;
         border: solid 1px #bebebe;
         border-radius: 3px;
 
         padding: 1rem;
+        height: 4rem;
 
         cursor: pointer;
 
@@ -110,14 +146,9 @@ import DP from "../assets/dp.jpeg";
         background-color: #dcdcdc;
     }
 
-    @media (min-width: 640px) {
+    @media (min-width: 720px) {
         h2 {
             font-size: 4rem;
-        }
-
-        .header-line {
-            border-top: solid 6px #2e2e2e;
-            width: 20%;
         }
 
         .about {

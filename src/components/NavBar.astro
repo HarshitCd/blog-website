@@ -12,15 +12,13 @@
         <div class="hamburger-nav-options">
             <a href="/">Home</a>
             <a href="/about">About</a>
-            <a href="/contact">Contact</a>
         </div>
     </button>
 
-    <!-- <div class="nav-options">
+    <div class="nav-options">
         <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-    </div> -->
+    </div>
 </nav>
 
 <style>
@@ -70,9 +68,12 @@
 
     .hamburger-icon span {
         background-color: #000000;
+
         width: 15px;
         height: 3px;
+
         border-radius: 2px;
+
         transition: all 0.3s ease;
     }
 
@@ -110,6 +111,23 @@
     @media (min-width: 640px) {
         .main a {
             font-size: 2rem;
+        }
+
+        .nav-options {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-options a {
+            padding: 0.5rem;
+        }
+
+        .nav-options a:hover {
+            background-color: #dedede;
+        }
+
+        .hamburger {
+            display: none;
         }
     }
 </style>

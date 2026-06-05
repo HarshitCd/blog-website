@@ -2,7 +2,7 @@
     margin: 0px;
     padding: 0px;
 
-    font-family: "Roboto", sans-serif;
+    font-family: "Atkinson Hyperlegible", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
@@ -13,7 +13,13 @@
 
 html,
 body {
-    background-color: #ececec;
+    /*background-image: url("../assets/grey-paper-texture-1.jpg");
+    background-repeat: repeat;
+    background-size: auto;
+    opacity: 1;*/
+
+    background-color: rgb(236, 236, 236);
+
     min-height: 100vh;
     min-width: 100vw;
 }
