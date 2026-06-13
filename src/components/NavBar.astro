@@ -3,18 +3,6 @@
         <a href="/">Talking Shit</a>
     </div>
 
-    <button id="hamburger" class="hamburger" aria-label="Toggle menu">
-        <div class="hamburger-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="hamburger-nav-options">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-        </div>
-    </button>
-
     <div class="nav-options">
         <a href="/">Home</a>
         <a href="/about">About</a>
@@ -27,12 +15,8 @@
     }
 
     nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: none;
 
-        position: sticky;
-        top: 0;
         left: 0;
         right: 0;
         margin: 0 auto;
@@ -42,7 +26,7 @@
         background-color: #ececec;
 
         padding-top: 0.5rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
 
         border-bottom: 1px solid #bebebe;
         padding-bottom: 0.5rem;
@@ -52,59 +36,7 @@
 
     .main a {
         font-size: 1.5rem;
-        font-weight: 600;
-    }
-
-    .hamburger {
-        border: 0px;
-        background-color: #ececec;
-
-        cursor: pointer;
-        padding: 0.5rem;
-    }
-
-    .hamburger-icon {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-    }
-
-    .hamburger-icon span {
-        background-color: #000000;
-
-        width: 15px;
-        height: 3px;
-
-        border-radius: 2px;
-
-        transition: all 0.3s ease;
-    }
-
-    .hamburger-nav-options {
-        display: none;
-        padding: 8px 0px;
-
-        flex-direction: column;
-
-        position: absolute;
-        right: 0;
-
-        width: 35%;
-        max-width: 150px;
-        margin-top: 0.5rem;
-
-        border: 1px solid #bebebe;
-        border-radius: 2px;
-
-        background-color: #ececec;
-    }
-
-    .hamburger-nav-options a {
-        padding: 0.35rem 0rem;
-    }
-
-    .hamburger.active .hamburger-nav-options {
-        display: flex;
+        font-weight: 500;
     }
 
     .nav-options {
@@ -112,8 +44,20 @@
     }
 
     @media (min-width: 640px) {
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: sticky;
+            top: 0;
+
+            margin-bottom: 2.5rem;
+        }
+
         .main a {
             font-size: 2rem;
+            font-weight: 600;
         }
 
         .nav-options {

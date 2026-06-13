@@ -12,12 +12,14 @@ const blogs = await getCollection("blogs");
 blogs.reverse();
 ---
 
-<h2>My Thoughts</h2>
-<div class="header-line"></div>
+<section class="home">
+    <h2>My Thoughts</h2>
+    <div class="header-line"></div>
 
-<ul>
-    {blogs.map((blog) => <BlogCard blog={blog} />)}
-</ul>
+    <ul>
+        {blogs.map((blog) => <BlogCard blog={blog} />)}
+    </ul>
+</section>
 
 <style>
     h2 {

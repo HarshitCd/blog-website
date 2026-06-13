@@ -1,0 +1,65 @@
+<section class="bottom-bar">
+    <div class="nav-options">
+        <a href="/" class="home">Home</a>
+        <a href="/about" class="about">About</a>
+    </div>
+</section>
+
+<style>
+    :root {
+        --main-color: #ececec;
+        --main-hover-color: #dedede;
+
+        --border-thickness: 1px;
+        --border-color: #bebebe;
+    }
+
+    .bottom-bar {
+        width: 85%;
+
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+        background-color: var(--main-color);
+        border-top: var(--border-thickness) solid var(--border-color);
+
+        margin-top: 1.5rem;
+    }
+
+    .nav-options {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .nav-options a {
+        text-decoration: none;
+
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 1.25rem 0rem;
+        border-right: var(--border-thickness) solid var(--border-color);
+    }
+
+    .nav-options a:last-child {
+        border-right: 0px;
+    }
+
+    .nav-options a:hover {
+        background-color: var(--main-hover-color);
+    }
+
+    @media (min-width: 640px) {
+        .bottom-bar {
+            display: none;
+        }
+    }
+</style>

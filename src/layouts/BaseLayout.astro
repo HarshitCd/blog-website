@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import NavBar from "../components/NavBar.astro";
+import BottomBar from "../components/BottomBar.astro";
 ---
 
 <html lang="en">
@@ -25,5 +26,28 @@ import NavBar from "../components/NavBar.astro";
         <main class="content">
             <slot />
         </main>
+        <BottomBar />
     </body>
 </html>
+
+<style>
+    body {
+        display: grid;
+        grid-template-rows: 1fr auto;
+    }
+
+    .content {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 640px) {
+        body {
+            grid-template-rows: auto 1fr;
+        }
+
+        .content {
+            margin-top: 0rem;
+        }
+    }
+</style>
